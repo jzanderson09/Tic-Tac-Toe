@@ -11,3 +11,37 @@ html {
     box-sizing: border-box;
     font-size: 62.5%;
 }
+
+h1 {
+    font-size: 6rem;
+}
+
+#container {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100vh;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+}
+
+#gameboard {
+    border: 5px solid black;
+    display: grid;
+    gap: 1%;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    height: 50vh;
+    inline-size: 1em;
+    place-content: center;
+    place-items: center;
+    width: 50%;
+}
+
+.player-space {
+    border: 1px solid red;
+    display: flex;
+    height: 100%;
+    place-content: center;
+    place-items: center;
+    width: 100%;
+}
