@@ -1,50 +1,73 @@
 :root {
     --font-style: 'Poppins', sans-serif;
+    --player-space-background-hover: rgb(0 0 0 / 10%);
+    --start-button-background: rgb(0, 150, 255);
+    --start-button-font: rgb(255, 255, 255);
 }
 
 *,
 *::before,
 *::after {
     box-sizing: inherit;
-    font-size: 1.6rem;
     margin: 0;
     padding: 0;
 }
 
 html {
+    background: url(./table-bg.jpg);
     box-sizing: border-box;
     font-family: var(--font-style);
     font-size: 62.5%;
 }
 
-h1 {
-    font-size: 6rem;
-}
-
 #container {
+    background: rgb(255 255 255 / 30%);
+    background-position: center;
+    border-radius: 25%;
     display: flex;
     flex-flow: column nowrap;
-    height: 100vh;
-    place-content: center;
-    place-items: center;
-    width: 100%;
-}
-
-#scoreboard {
-    border: 3px outset purple;
-    display: flex;
-    flex-flow: column nowrap;
-    height: 10vh;
+    font-size: 1.6rem;
+    height: 95vh;
     margin: 1% auto;
     place-content: center;
     place-items: center;
-    width: 100%;
+    width: 50%;
+}
+
+.menu {
+    border: 5px outset black;
+    border-radius: 25%;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 10vh;
+    margin: 2% auto;
+    padding: 2%;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+    width: 40%;
+}
+
+#start-button {
+    background-color: var(--start-button-background);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 1px black;
+    color: var(--start-button-font);
+    font-size: 3rem;
+    padding: 2%;
+}
+
+#start-button:active {
+    transform: translateY(5px);
 }
 
 #gameboard {
     border: 5px solid black;
+    border-radius: 10px;
     display: grid;
-    gap: 1%;
+    font-size: 6rem;
+    gap: 3px;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
     height: 50vh;
     inline-size: 1em;
@@ -54,10 +77,19 @@ h1 {
 }
 
 .player-space {
-    border: 1px solid red;
+    border: 5px outset black;
+    cursor: pointer;
     display: flex;
     height: 100%;
     place-content: center;
     place-items: center;
     width: 100%;
+}
+
+.player-space:hover {
+    background: var(--player-space-background-hover);
+}
+
+.player-space:active {
+    transform: translateY(5px);
 }
